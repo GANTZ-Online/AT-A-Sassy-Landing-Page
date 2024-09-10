@@ -1,0 +1,27 @@
+// Import utility and config files
+@import "utilities";
+@import "config";
+
+// Define a placeholder for button styles
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+
+  &:hover {
+    transform: scale(0.80);
+  }
+}
+
+// Style for primary buttons
+.btn-primary {
+  @extend %btn;
+  @include set-bg(lighten($primary-color, 10%));
+}
+
+// Style for secondary buttons
+.btn-secondary {
+  @extend %btn;
+  @include set-bg($secondary-color);
+}
